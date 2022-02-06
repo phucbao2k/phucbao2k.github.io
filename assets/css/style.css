@@ -196,7 +196,7 @@ display: block;
     position: relative;
 margin-top: 46px;
 padding-top: 50%; /* Đảm bảo khung của chiều cao bằng 50% khung của kích thước chiều ngang*/
-background: url('/w3_the_band/assets/img/slider/ny.jpg') top center/ cover no-repeat;
+background: url('/assets/img/slider/ny.jpg') top center/ cover no-repeat;
 }
 
 /* Không nên viết relative ở #slider .text-content, vì nếu viết vậy sẽ phải có lớp nhỏ hơn viết absolute, 
