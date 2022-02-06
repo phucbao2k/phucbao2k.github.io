@@ -1,0 +1,490 @@
+/* Reset CSS */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+    font-family: Helvetica, Arial, sans-serif;
+/* Lấy font là Helvetica hoặc Arial, hoặc các font chủng tương tự(thuộc sans-serif)*/
+}
+.clear{
+    clear: both; /* thuộc tính clear này để áp dụng khoảng cách giữa cách thành phần mà trong chúng có chứa ảnh
+    (nếu chỉ có text thì ko cần) */
+}
+.text-white{
+    color: white;
+}
+.text-center{
+    text-align: center !important;}
+.row{
+
+    margin-left: -8px;
+    margin-right: -8px;
+}
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.col{
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+    }
+    .col-full{
+        width: 100%;
+    }
+.col-third{
+    width: calc(100%/3);
+}
+.col-half{
+width: 50%;
+}    
+.mt-8{
+    margin-top: 8px !important;
+}
+.mt-16{
+    margin-top: 16px !important;
+}
+.mt-32{
+    margin-top: 32px !important;
+}
+.btn{
+    color: #fff;
+    background-color:#000;
+    text-decoration: none;
+    padding: 11px 16px;
+    display: inline-block;
+    margin-top: 15px;
+    border: none;
+    text-align: center;
+    }
+    .btn:hover{
+        cursor: pointer;
+        color:#000;
+        background-color: #fff;
+    }
+    .pull-right{
+        float: right !important;
+    }
+/* I. Cách viết thứ tự:
+1.Từ ngoài vào trong(như trên bài là từ Home->Band...
+2. Từ trên xuống dưới
+3. Từ tổng quan đến chi tiết(Như More có mục nhỏ)*/
+
+/*II. Khi cấu hình css
+1. Vị trí
+2. Kích thước(width, height)
+3. Màu sắc
+4. Kiểu dáng(kiểu chữ,....) */
+
+/* III. Các id khác chưa dùng tới nhưng cứ viết ra, vì:
+1. Nó dạy ta nhớ cách phân tích từng mục
+2. Dễ dàng cho việc phát triển website sau này */
+
+
+/*HEADER SECTION */
+#header{
+    top: 0;
+    height: 46px;
+    background-color: #000000;
+    position: fixed;/* Khi thẻ css có thuộc tính position thì nó có thể làm cha cho các
+    thẻ css khác absolute theo*/
+    left: 0;
+    right: 0;
+    z-index: 1; /* z-index được sử dụng để dịch chuyển các phần tử trên trục z,
+     tức là vào trong hoặc ra khỏi màn hình.
+     Nó được sử dụng để xác định thứ tự của các phần tử nếu chúng chồng lên nhau. Áp dụng trong cái như
+     more ấy */
+    
+}
+#header .menu-icon,
+#header .search-icon{
+    line-height: 46px;
+    color: #fff;
+    font-size: 20px;
+}
+#header .mobile-menu-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#header .mobile-menu-btn,
+#header .search-btn{
+    padding: 0 21px;
+    float: right;
+  
+    /* Trong TH không cần hover, mà chỉ cần di chuột vào
+    là từ mũi tên ra bàn tay thì ta sẽ để cursor: pointer; ở chỗ này*/
+}
+
+#header .search-btn:hover{
+    background-color: #f44336!important;
+    cursor: pointer;
+}
+#header .mobile-menu-btn:hover{
+    background-color: #ccc;
+}
+#header .mobile-menu-btn:hover .menu-icon{
+    background-color: #000;
+}
+
+/* NAVIGATION SECTION */
+#nav{
+    display: inline-block;
+}
+#nav, .subnav{
+list-style-type: none;
+/* Để điều chỉnh dạng hiển thị kiểu danh sách, kiểu dòng đầu trước content là chấm, hay 1,2,3...*/
+}
+#nav > li{
+    display: inline-block;
+}
+/*KHI cần tạo 1 thành phần cha có chứa nhiều thành phần con,
+ mà thành phần con đấy lại chứa các thành phần con khác
+(Như nav có More, slider có text-content)
+ ,và có các thành phần con dựa vào thành phần cha đó để hiển thị, thì thành phần cha trực tiếp
+ phải có position: relative; và thành phần con phải có position: absolute;
+ một lần viết absolute này áp dụng cho thành phần con sau đó nếu ta không thay đổi giao diện nữa*/
+
+ /*Lưu ý sự liên quan mật thiết giữa position và relative trong phần slider */
+#nav li{
+    position: relative;
+}
+#nav > li >a{
+    color: #fff;
+    text-transform: uppercase;
+}
+#nav li a{
+    color: #fff;
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+    display: block;
+}
+#nav li:hover .subnav{
+display: block;
+}
+#nav> li:hover> a,
+#nav .subnav li:hover a{
+    color: #000;
+    background-color: #ccc;
+}
+#nav .subnav{    
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0, 0.3)
+}
+#nav .subnav a{
+    color: #000;
+    padding: 0 12px;
+    line-height: 38px;
+}
+#nav .nav-arrow-down{
+    font-size: 12px;
+}
+
+
+/*SLIDER SECTION */
+#slider{
+    position: relative;
+margin-top: 46px;
+padding-top: 50%; /* Đảm bảo khung của chiều cao bằng 50% khung của kích thước chiều ngang*/
+background: url('/w3_the_band/assets/img/slider/ny.jpg') top center/ cover no-repeat;
+}
+
+/* Không nên viết relative ở #slider .text-content, vì nếu viết vậy sẽ phải có lớp nhỏ hơn viết absolute, 
+mà .text-content lại có 2 thành phần con cùng cấp, cùng thừa hưởng cách hiển thị như nhau*/
+#slider .text-content{
+    position: absolute;
+bottom: 23.5px;
+color: #fff!important;
+width: 100%;
+/*left: 50%;
+transform: translateX(-50%); */
+text-align: center;
+}
+#slider .text-heading{
+font-weight: 500;
+font-size: 24px;
+}
+#slider .text-description{
+font-size: 15px;
+margin-top: 20px;
+}
+
+
+/* CONTENT SECTION */
+
+#content .content-section{
+    width: 800px;
+    max-width: 100%;
+    padding: 64px 0 112px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+#content .section-heading{
+font-size: 30px;
+font-weight: 500;
+text-align: center;
+letter-spacing: 4px;
+ }
+ #content .section-sub-heading{
+     margin-top: 25px;
+     font-size: 15px;
+     text-align: center;
+     font-style: italic;
+     opacity: 0.6; /* opacity tức là giá trị làm mờ. Dao động từ 0 đến 1 */
+ }
+ #content .about-text{
+    margin-top: 25px;
+    font-size: 15px;
+    text-align: justify; /* justify là xếp các kí tự sao cho đầu dòng và cuối dòng trước khi xuống
+    dòng là ngang nhau */
+    line-height: 1.4; /* line-height là khoảng cách giữa các dòng */
+ }
+#content .member-list{
+    margin-top: 32px;
+}
+/*Nếu thẻ cha thuộc tính cho tất cả các thẻ con là float, thì thẻ cha sẽ bị co lại,
+không bao trọn các thẻ con nữa, 
+để khắc phục, ta tạo 1 class trống là clear ở file index.html rồi css cho nó với thuộc tính:
+clear:both;  */
+#content .member-name{
+    font-size: 15px;
+}
+#content .member-img{
+    width: 154px;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+
+
+/* TOUR SECTION */
+.tour-section{
+    background-color:#000;
+}
+.tickets-list{
+    background-color:#fff;
+    margin-top: 40px;
+    list-style: none; /* bỏ mấy cái ở đầu dòng trong phần tử ở list đi*/
+}
+.tickets-list li{
+    font-size: 15px;
+    padding: 11px 16px;
+    border-bottom: 1px solid #ddd;
+    color: #757575;
+}
+.tickets-list .sold-out{
+    margin-left: 16px;
+background-color: #f44336;
+color: #fff;
+padding: 3px 4px;
+}
+.tickets-list .quantity{
+float: right;/*Khi đặt thuộc tính float, đối tượng 
+sẽ được coi là dạng box */
+width: 24px;
+background-color:#000;
+color: #fff;
+border-radius: 50%; /*border-radius là giá trị bo tròn */
+text-align: center;
+line-height: 24px;
+margin-top: -3px;
+/* LƯU Ý: Chỉ sử dụng được margin có giá trị âm khi có float */
+}
+.places-list{
+margin-top: 16px;
+
+
+}
+.place-img:hover{
+    opacity: 0.6;
+}
+.place-img{
+    width: 100%; /* ở đây chiều ngang .place-img sẽ là 100% của 33.33333% chiều ngang của .place-item */
+    display: block; /* Nếu 2 phần ghép với nhau trong 1 thẻ cha mà giữa 2 phần đó có 1 viền ở giữa,
+    thì tức là nó đang hiển thị display: inline; 
+    ta thay đổi thành block là sẽ mất viền
+    dispaly: inline-block; là hiển thị theo 1 hàng trong 1 box */
+}
+.place-body{
+background-color: #fff;
+padding: 16px;
+font-size: 15px;
+}
+.place-heading{
+font-size: 15px;
+font-weight: 600;
+}
+.place-time{
+    margin-top: 15px;
+    color: #757575;
+}
+.place-desc{
+margin-top: 15px;
+line-height: 1.4;
+}
+
+
+/*MODAL SECTION */
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    /*Với position =fixed; ta ko cần thuộc tính width, height,
+    các thuộc tính top, right, bottom, left khi đi vs fixed để chỉ nó cách cách cạnh của trình duyệt 
+    là bao nhiêu */
+}
+.modal.open{
+    display: flex;
+}
+.model-container {
+    background-color: #fff;
+    width: 900px;
+max-width: calc(100% - 32px);
+    min-height: 200px;
+    position: relative;
+    animation: modalFadeIn ease .7s;
+}
+.modal-header{
+    background:#009688;
+    height: 130px;
+    display: flex;/* Thuộc tính flex đặt độ dài linh hoạt trên các mặt hàng linh hoạt.
+    Lưu ý: Nếu phần tử không phải là một mục linh hoạt, thuộc tính flex không có hiệu lực.
+    và chỉ khi sử dụng display: flex;
+    thì align-items hoặc justify-content mới áp dụng đc*/
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #fff;
+
+}
+.modal-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff;
+    padding: 12px;
+    cursor: pointer;
+    opacity: 0.9;
+}
+.modal-close:hover{
+    opacity: 1;
+}
+.modal-label {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+.modal-input {
+    border: 1px
+ solid #ccc;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 24px;
+}
+#buy-tickets {
+    background: #009688;
+    border: none;
+    color: #fff;
+    width: 100%;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 17px;
+    cursor: pointer;
+}
+#buy-tickets:hover {
+    opacity: 0.9;
+}
+.modal-footer{
+    padding: 16px;
+    text-align: right;
+}
+.modal-footer a{
+    color: #2196F3;
+    }
+@keyframes modalFadeIn{
+    from{
+        opacity: 0;
+transfrom: translateY(-140px);
+    }
+    to{
+        opacity: 1;
+transform: translateY(0);
+    }
+} 
+
+
+/*CONTACT SECTION */
+.contact-content {
+    margin-top: 48px;
+}
+.contact-info{
+    font-size: 18px;
+    line-height: 1.5;
+}
+.contact-info i[class*="ti-"]{ /* Đây là cách chọn tất cả các thẻ con có cùng tên bắt đầu là ti- trong thẻ cha*/
+    width: 30px;
+    display: inline;
+}
+.contact-info a{
+    color: #101aef;
+    opacity: 0.8;
+}
+.contact-info a:hover{
+    opacity: 1;
+}
+.contact-form{
+    font-size: 15px;
+}
+.contact-form .form-control{
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+
+/* MAP SECTION*/
+.map-section img{
+    width: 100%;
+}
+
+
+/* FOOTER SECTION */
+#footer{
+padding: 64px 16px;
+text-align: center;
+}
+#footer .social-list a{
+color:rgba(0,0,0, 0.6);
+text-decoration: none;
+}
+#footer .copyright a:hover,
+#footer .social-list a:hover{
+    color:rgba(0,0,0, 0.4);
+}
+#footer .copyright{
+        margin-top: 15px;
+        color: rgba(0,0,0, 0.6);
+}
+#footer .copyright a{
+    color: rgba(0,0,0, 0.6);
+}
+
