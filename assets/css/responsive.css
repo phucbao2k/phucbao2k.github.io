@@ -30,14 +30,14 @@ font-size: 48px;
     }
 }
 /* Tablet */
-@media (min-width: 741px) and (max-width: 1023px){
+@media (min-width: 740px) and (max-width: 1023px){
     
     #header .mobile-menu-btn{
         display: none;
     }
 }
 /* Mobile */
-@media (max-width:740px){
+@media (max-width:739px){
     .s-full-width,
     .s-col-full{
         width: 100% !important;
