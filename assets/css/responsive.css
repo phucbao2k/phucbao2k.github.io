@@ -1,3 +1,5 @@
+/* Dùng em thay vì px để tương thích trên nhiều trình duyệt, 1em = 16px */
+
 /* PC*/
 @media (min-width: 64em){
 #header .mobile-menu-btn{
