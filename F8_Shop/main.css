@@ -147,8 +147,18 @@ background-color: #EF5122;
 align-self: flex-end; 
 /*Muốn chart hiển thị ngược lên trên thì dùng align-self: flex-end;
 ko phải là align-content */
+animation: growth ease-in 0.5s;
 }
-
+@keyframes growth {
+    from {
+        opacity: 0;
+        height: calc(var(--percent) - 50%);
+    }
+    to {
+        opacity: 1;
+        height: var(--percent);
+    }
+}
 /* End */
 .the-end{
     margin: 12px auto 48px auto;
@@ -172,11 +182,9 @@ ko phải là align-content */
     flex: 1;
     padding: 4px 16px;
     background-color: rgb(227, 192, 214);
-    
 }
 .the-end__second-two{
     flex: 1;
     padding: 4px 16px;
     background-color: rgb(192, 210, 227);
-    
 }
