@@ -10,12 +10,13 @@ html, body{
 body{
     background-color: #ccc;
 }
+/*Phải đặt display: flex; thì mới di chuyển vị trí các thẻ nhỏ trong thẻ cha đc */
 /* Navbar */
 .nav{
     min-height: 42px;
     background-color: #EF5122;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* ăn theo main-axis, mặc định là ngang, từ trái qua phải */
 }
 .nav-list{
     padding-left: 42px;
@@ -50,27 +51,39 @@ body{
     margin-top: 36px;
     padding: 12px 0;
     background-color: #fff;
+    display: flex;
 }
 .column-item{
     padding: 0 16px;
 }
-.sidebar-one{}
-.sidebar-two{}
-.main-column{}
+.sidebar-one{
+    flex: 1;
+}
+.sidebar-two{
+    flex: 1;
+}
+.main-column{
+    flex: 3;
+}
 
 /*Feature layout */
 .feature-layout{
     margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 /* Responsive PC, Tablet*/
 @media (min-width:740px){
     .feature-layout{
+        flex-direction: row; /* flex-direction định hướng chiều hiển thị của item, là hàng hay cột */
         }
 }
 .feature-item{
     padding: 12px 16px;
     margin-top: 16px;
+    flex-basis: 30%;
 }
 .feature-item:nth-child(1){
     background-color: rgb(192, 227, 222);
@@ -87,6 +100,8 @@ body{
     background-color:#fff;
     margin-top: 36px;
     padding: 12px 0 32px 0;
+    display: flex;
+    justify-content: space-around;
 }
 .wrap-layout__item{
     width: 148px;
@@ -106,10 +121,12 @@ body{
     padding: 32px 0;
     max-width: 640px;
     height: 360px;
+    display: flex;
 }
 .center-layout__item{
     font-size: 42px;
     font-weight: 700;
+    margin:auto;
 }
 
 /*Chart layout */
@@ -118,6 +135,8 @@ body{
     padding: 32px 0;
     height: 320px;
     background-color: #fff;
+    display: flex;
+    justify-content: space-around;
 }
 .chart-layout__item{
 width: 60px;
@@ -125,6 +144,9 @@ color: #fff;
 text-align: center;
 height: var(--percent);
 background-color: #EF5122;
+align-self: flex-end; 
+/*Muốn chart hiển thị ngược lên trên thì dùng align-self: flex-end;
+ko phải là align-content */
 }
 
 /* End */
@@ -133,18 +155,26 @@ background-color: #EF5122;
     padding: 32px 0;
     max-width: 740px;
     min-height: 360px;
-    
+    display: flex;
+    flex-direction: row;
 }
 .the-end__first{
     padding: 4px 16px;
     background-color: #fff;
+    flex: 1;
 }
-.the-end__second{}
+.the-end__second{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
 .the-end__second-one{
     padding: 4px 16px;
     background-color: rgb(227, 192, 214);
+    flex: 1;
 }
 .the-end__second-two{
     padding: 4px 16px;
     background-color: rgb(192, 210, 227);
+    flex: 1;
 }
