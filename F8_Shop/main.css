@@ -169,12 +169,14 @@ ko phải là align-content */
     flex-direction: column;
 }
 .the-end__second-one{
+    flex: 1;
     padding: 4px 16px;
     background-color: rgb(227, 192, 214);
-    flex: 1;
+    
 }
 .the-end__second-two{
+    flex: 1;
     padding: 4px 16px;
     background-color: rgb(192, 210, 227);
-    flex: 1;
+    
 }
