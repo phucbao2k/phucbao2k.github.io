@@ -147,7 +147,7 @@ background-color: #EF5122;
 align-self: flex-end; 
 /*Muốn chart hiển thị ngược lên trên thì dùng align-self: flex-end;
 ko phải là align-content */
-animation: growth ease-in 0.5s;
+animation: growth ease-in 0.5s; /* gán animation */
 }
 @keyframes growth {
     from {
