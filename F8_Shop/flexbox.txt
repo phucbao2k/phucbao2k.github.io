@@ -1,0 +1,65 @@
+Các thuộc tính của flexbox:
+-initial: đặt thuộc tính này theo mặc định
+-inherit: đặt thuộc tính này để thẻ con kế thừa thuộc tính của thẻ cha
+-strecth để các items hiển thị sao cho các items gắn vào chiều start và end theo main axis/cross axis
+
+
+1. display: flex/ inline-flex; 
+
+
+2. flex-direction: row|row-reverse|column|column-reverse|initial|inherit;
+ -hướng của main-axis
+
+
+3. flex-wrap: nowrap|wrap|wrap-reverse|initial|inherit;
+ - hướng cuộn của các items
+ - khi có initial sẽ không cuộn xuống
+
+
+4. flex-basis: <length> -number| auto| initial| inherit;
+ - độ dài của từng item theo main axis, nên tính bằng %, ko thì px
+
+
+5. justify-content: flex-start/ flex-end/ center/ stretch/ space-between/ space-around;
+ -xác định chiều các items hiển thị theo main axis và cách các items cách nhau như thế nào
+ 
+
+6. justify-self: flex-start/ flex-end/ center/ strecth;
+ -xác định chiều từng item hiển thị theo main axis
+
+
+7. align-items: flex-start/ flex-end/ center/ strecth;
+ - căn chỉnh cách hiển thị items(kể cả 1 item) theo cross-axis 
+
+
+8. align-content: flex-start/ flex-end/ center/ strecth; 
+ -tác dụng giống align-items, nhưng chỉ có tác dụng với 2 dòng trở lên 
+
+
+9. align-self: flex-start/ flex-end/ center/ strecth;
+ -giống justify-self nhưng theo cross-axis
+
+
+10. flex-grow:<number> |initial|inherit;
+ -quyết định các item có giãn ra ko, mặc định là 0 (ko cho phép)
+
+
+11. flex-shrink:<number>;
+ - quyết định các item có co lại ko, mặc định là 1 (cho phép)
+
+
+12. flex:<number>;
+ - giá trị viết tắt của flex-grow flex-shrink flex basis |auto|none|initial|inherit; 
+ - mặc định(initial) là flex: 0 1 auto;
+ - auto: 1 1 auto;
+ - none: 0 0 auto;
+
+
+13. order:<number>;
+ - quyết định thứ tự hiển thị của từng item, cái nào trước, cái nào sau
+
+
+14. flex-flow: flex-direction flex-wrap|initial|inherit; ;
+ 
+
+
