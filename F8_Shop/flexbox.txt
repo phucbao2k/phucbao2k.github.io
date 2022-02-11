@@ -4,7 +4,7 @@ Các thuộc tính của flexbox:
 -strecth để các items hiển thị sao cho các items gắn vào chiều start và end theo main axis/cross axis
 
 
-1. display: flex/ inline-flex; 
+1. display: flex/ inline-flex;
 
 
 2. flex-direction: row|row-reverse|column|column-reverse|initial|inherit;
@@ -50,7 +50,7 @@ Các thuộc tính của flexbox:
 
 12. flex:<number>;
  - giá trị viết tắt của flex-grow flex-shrink flex basis |auto|none|initial|inherit; 
- - mặc định(initial) là flex: 0 1 auto;
+ - initial: 0 1 auto;
  - auto: 1 1 auto;
  - none: 0 0 auto;
 
